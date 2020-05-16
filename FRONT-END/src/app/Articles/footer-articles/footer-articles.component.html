@@ -1,0 +1,46 @@
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{TheDayBefore[0].Img}}" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-text" *ngFor="let art1 of TheDayBefore">
+                           <a class ="link" [routerLink]="['/articles', art1.ID]">{{art1.Titre|slice:0:40}}...</a> <br>
+                       </div>
+                    </div>
+                    <div class="bg-text one">{{TheDayBefore[0].Date|date:"MM/dd/yy"}}</div>
+                    <!-- <div class="bg-text one">15/05/20</div> -->
+
+            </div>
+        </div>
+   
+    
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{Today[0].Img}}" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-text" *ngFor="let art2 of Today">
+                            <a class ="link" [routerLink]="['/articles', art2.ID]">{{art2.Titre|slice:0:40}}...</a> <br>
+                        </div>
+                    </div>
+                    <div class="bg-text one">{{Today[0].Date|date:"MM/dd/yy"}}</div>
+                    <!-- <div class="bg-text one">16/05/20</div> -->
+
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="card">
+                <img class="card-img-top" src="{{Yesterday[0].Img}}" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="card-text" *ngFor="let art3 of Yesterday">
+                            <a class ="link" [routerLink]="['/articles', art3.ID]">{{art3.Titre|slice:0:40}}...</a> <br>
+                        </div>
+                    </div>
+                    <div class="bg-text one">{{Yesterday[0].Date|date:"MM/dd/yy"}}</div>
+                    <!-- <div class="bg-text one">14/05/20</div> -->
+
+            </div>
+        </div>
+       
+    </div>
+

@@ -1,0 +1,154 @@
+/* body {
+    margin: 0;
+    width: 100%;
+} */
+
+.containerr{
+
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    border-bottom: 1px solid rgba(149, 152, 154, 0.4);
+    position: fixed;
+    top: 0;
+    z-index: 5000;   
+    background-color: #fff;
+    width: 100%;
+  
+}
+
+.logo {
+
+    background-image: url("../../../assets/image/Logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height:5rem;
+    align-self: center;
+}
+
+.categories {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.social-media {
+    display: flex;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    float: right;
+    margin-right: 6%;
+    padding-top: 4px;
+    padding-bottom: 6px;
+}
+
+ul {
+
+    list-style: none;
+
+}
+ul>li {
+
+    padding-right: 8px;
+
+}
+
+.fa-facebook-official {
+    color: #3B5998;
+
+  }
+
+  .fa-twitter{
+    color: #55ACEE;
+
+  }
+
+  .fa-instagram{
+    color: #f40083;
+
+  }
+  .fa-youtube-play{
+    color: #bb0000;
+
+  }
+
+  .fa-phone{
+    color:red
+  }
+  .fa-phone span{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+
+  }
+
+  .categories_1{
+    border-bottom: 1px solid rgba(149, 152, 154, 0.4);
+    border-left: 1px solid rgba(149, 152, 154, 0.4);
+    
+  }
+
+  .categories_2{
+
+    display: grid;
+    border-left: 1px solid rgba(149, 152, 154, 0.4);
+    grid-template-columns: 3fr 1fr;
+    
+  }
+  .categories_2 a:hover{
+    color:  #0086D3;
+  }
+
+  .navbar{
+    padding: 0;
+    border-right: 1px solid rgba(149, 152, 154, 0.4);
+    width: 90%;
+    font-weight: 600;
+    position: relative;
+    left: 1rem;
+  
+
+  }
+.navbar-nav .nav-link{
+    color: black;
+  }
+
+
+/* Search button */
+.example input{
+    padding: 10px 0px;
+    width: 10rem;
+    text-align: center;
+    position: relative;
+    right:1rem;
+    border: none;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .fa-search{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color:black;
+    position: relative;
+    top: 0.5rem;
+    right:1rem;
+  
+  }
+  
+#grid2{
+  width: 25rem;
+}
+  
+.active{
+  background-color:#F22929;
+  padding: 0.1rem;
+ 
+
+}
+.active a.nav-link {
+  color: aliceblue!important;
+}
+a:active{
+ /* color: blueviolet!important; */
+ background-color:#fff;
+ 
+}

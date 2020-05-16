@@ -1,0 +1,3 @@
+﻿Fichier de modèle généré : ModelItNews.edmx.
+Le chargement des métadonnées à partir de la base de données a pris 00:00:00.7911974.
+La génération du modèle a pris 00:00:01.3412791.

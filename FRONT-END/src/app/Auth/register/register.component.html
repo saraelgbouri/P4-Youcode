@@ -1,0 +1,81 @@
+
+<div class="row">
+    <div class="signup-form col-md-6">
+        <form  [formGroup]="registerForm" (ngSubmit)="createAccount()"> 
+            <h2>Register</h2>
+            <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+                <div class="row"> 
+                    <div class=" form-group fullname col s6">
+                    <label for="name">FirstName</label>
+                    <input formControlName="Nom" type="text" class="form-control" placeholder="First Name" >
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Nom').touched && registerForm.get('Nom').invalid">
+                        This field is required !
+                    </div>
+                    </div>
+                    <div class=" form-group fullname col s6">
+                    <label for="lastname">LastName</label>
+                    <input   formControlName="Prenom" type="text" class="form-control"  placeholder="LastName" >
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Prenom').touched && registerForm.get('Prenom').invalid">
+                        This field is required !
+                    </div>
+                    </div>
+                </div> 
+                <div class="row"> 
+                    <div class=" form-group fullname col s6">
+                    <label for="tele">Phone</label>
+                    <input formControlName="Tele" type="tel" class="form-control" placeholder="Your Phone" >
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Tele').touched && registerForm.get('Tele').invalid">
+                        This field is required !
+                    </div>
+                    </div>
+                    <div class=" form-group fullname col s6">
+                    <label for="img">Image</label>
+                    <input   formControlName="Image" type="file" class="form-control">
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Image').touched && registerForm.get('Image').invalid">
+                        This field is required !
+                    </div>
+                    </div>
+                </div>        	
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input   formControlName="Email" type="email" class="form-control" placeholder="Your Email">
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Email').touched && registerForm.get('Email').invalid">
+                        This field is required !
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input  formControlName="Password" type="password" class="form-control" placeholder="Your Password">
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Password').touched && registerForm.get('Password').invalid">
+                        This field is required !
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="passwordcon">Confirm Your Password</label>
+                    <input  formControlName="ConfirmPassword" type="password" class="form-control" placeholder="Your confirm Password">
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('ConfirmPassword').touched && registerForm.get('ConfirmPassword').invalid">
+                        This field is required !
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select formControlName="Role" class="form-control" id="role">
+                    <option value="">Select One Role</option>
+                    </select>
+                    <div class="alert alert-danger mt-1" *ngIf="registerForm.get('Role').touched && registerForm.get('Role').invalid">
+                        This field is required !
+                    </div>
+                </div>           
+            <div class="form-group">
+                <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block"> <i class="fa fa-user"></i> Register Now</button>
+            </div>
+            <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+
+        </form>
+    </div>
+</div>

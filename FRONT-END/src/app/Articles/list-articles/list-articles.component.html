@@ -1,0 +1,68 @@
+  <!--breadcrumb  -->
+  <!-- <ul class="breadcrumb">
+    <li><a routerLink="/article">News</a></li>
+  </ul> -->
+  <!-- Loading -->
+  
+  <div *ngIf="loading" class="text-center my-5">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+  </div>
+
+<div *ngIf="!loading">
+
+    <!-- Slider -->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+          <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let slide of slider;let i =index" [ngClass]="{active: i==0}" >
+                  <img src="{{slide.img}}" alt="News" width="100%" height="400">
+                  <div class="carousel-caption">
+                    <a class="titre" [routerLink]="['/articles', slide.ID]">{{slide.Titre|slice:0:120}}...</a>  
+                    <p class="body">{{slide.body|slice:0:200}}...</p>
+                  </div>   
+              </div>
+
+              <div class="bg-titre">Featured</div>
+          </div>
+    </div>
+
+</div>
+
+    <!-- body-article -->
+
+      <div class="row my-2">
+          <div class="col-md-6 my-2" *ngFor="let bodyart of bodyArticle">
+              <div class="card">
+                    <img [routerLink]="['/articles', bodyart.ID]" class="card-img-top" src="{{bodyart.img}}" alt="Card image cap">                 
+                    <div class="card-body">
+                          <a [routerLink]="['/articles', bodyart.ID]" class="lien">
+                              <h5>{{bodyart.Titre|slice:0:60}}</h5>
+                          </a>
+                          <p class="card-text">{{bodyart.body|slice:0:83}}...</p>
+                      </div>
+                      <div class="bg-text">{{bodyart.Date|date:'dd-MM'}}</div>
+              </div>
+        </div>
+      </div>
+
+     
+          
+      <hr>
+  
+  
+        
+
+
+
+
+      
+<!-- <h4 class="my-4">Categories</h4>
+<ul class="list-group">
+
+    <li  *ngFor="let category of categories" class="list-group-item">
+        
+        <a [routerLink]="['/article/category' , category.id]">{{category.Titre}}</a>
+    </li>
+
+</ul> -->

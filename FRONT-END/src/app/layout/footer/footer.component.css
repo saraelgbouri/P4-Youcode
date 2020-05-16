@@ -1,0 +1,51 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  
+}
+.menu-foot ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: #333333;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 0;
+
+}
+
+.menu-foot ul a{
+    color: white;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 1rem;
+
+
+}
+
+.footer{
+    background-color: black;
+    /* padding: 3rem  0; */
+
+}
+
+.rights{
+    color: #fff;
+    font-size: 0.75rem;  
+    text-align: center;
+}
+
+.rights b{
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+.coloboration{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+.coloboration img{
+    width: 7rem;
+    padding: 1rem;
+  
+
+}

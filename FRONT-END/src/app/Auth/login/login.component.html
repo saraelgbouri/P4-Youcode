@@ -1,0 +1,66 @@
+<!-- <div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+        <h1 class="text-center">Login to Your Account</h1>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-6 mx-auto">
+
+        <div class="card">
+            <div class="card-body">
+                <div class="card-text">
+
+                <form  [formGroup]="loginForm" (ngSubmit)="login()"> 
+
+                    <div class="form-group">
+                        <label for="name"></label>Email
+                        <input   formControlName="username" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>Password
+                        <input  formControlName="password" type="password" class="form-control"></div>
+
+    
+
+
+                    <button class="btn btn-primary btn-block">
+                        <i class="fa fa-user"></i>Login 
+                    </button>
+
+                </form>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        
+<div class="row">
+    <div class="signup-form col-md-6">
+        <form  [formGroup]="loginForm" (ngSubmit)="login()"> 
+            <h2>Login</h2>
+            <!-- <p class="hint-text">Create your account. It's free and only takes a minute.</p> -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input formControlName="username" type="email" class="form-control" placeholder="Your Email">
+                    <div class="alert alert-danger mt-1" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">
+                        This field is required !
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input formControlName="password" type="password" class="form-control" placeholder="Your Password">
+                    <div class="alert alert-danger mt-1" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+                        This field is required !
+                    </div>
+                </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block"> <i class="fa fa-user"></i> Login</button>
+            </div>
+            <div class="text-center"><a href="#">Forgot Password?</a></div>
+
+        </form>
+    </div>
+</div>
+

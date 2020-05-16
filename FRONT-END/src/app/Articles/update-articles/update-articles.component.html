@@ -1,0 +1,65 @@
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h1>Update article</h1>
+    </div>
+    <div class="col-md-6 text-right">
+        <a class="btn btn-link" routerLink="/articles">
+            <i class="fa fa-arrow-left"></i> Back to HomePage
+        </a>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+
+      <form [formGroup]="articleForm" (ngSubmit)="updateArticle()">
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input formControlName="Titre" autocomplete="off"  placeholder="Your title" type="text" class="form-control" id="title" value="{{bodyart.Titre}}">
+            <div class="alert alert-danger mt-1" *ngIf="articleForm.get('Titre').touched && articleForm.get('Titre').invalid">
+                This field is required !
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Content">Content</label>
+            <textarea  formControlName="Body" placeholder="Your content" class="form-control" id="Content" rows="4" value="{{bodyart.body}}"></textarea>
+            <div class="alert alert-danger mt-1" *ngIf="articleForm.get('Body').touched && articleForm.get('Body').invalid">
+                This field is required !
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Content">Image</label>
+            <input formControlName="Img"  autocomplete="off"  placeholder="Link of the Image" type="text" class="form-control" id="image" value="{{bodyart.img}}">
+            <div class="alert alert-danger mt-1" *ngIf="articleForm.get('Img').touched && articleForm.get('Img').invalid">
+                This field is required !
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Content">Video</label>
+            <input  formControlName="video"  autocomplete="off"  placeholder="Link of the Video" type="text" class="form-control" id="image" value="{{bodyart.video}}">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select  formControlName="CategorieID"  class="form-control" id="category">
+                <option value="">Select One Category</option>
+                <option [value]="cat.ID" *ngFor="let cat of cats">{{ cat.Titre }}</option>
+            </select>   
+            <div class="alert alert-danger mt-1" *ngIf="articleForm.get('CategorieID').touched && articleForm.get('CategorieID').invalid" >
+                This field is required !
+            </div>   
+        </div>
+        
+
+        <button type="submit" class="btn btn-warning">Update  Article</button>
+
+
+      </form>
+    </div>
+</div>
+
+

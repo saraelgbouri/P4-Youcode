@@ -1,0 +1,57 @@
+    <hr class="ligne">
+        <h1>{{bodyart.Titre}}</h1>
+        <div class="row article">
+
+            <div class=" liens col-md-6">
+
+                <div class="date-logo col-md-4">
+                   <a [routerLink]="['/articles/Journalist', JournalistId]"> <img class="card-img-user" src="{{bodyart.Journalistes.Image}}" alt="Card image cap"> </a>
+                 </div>
+                <div class="date-logo col-md-8">
+                        <span class="name">Created By <a [routerLink]="['/articles/Journalist', JournalistId]"><b>{{bodyart.Journalistes.Nom}}</b></a></span>
+                        <span class="bg-text">{{bodyart.Date|date:'MMM d, y, h:mm:ss a'}}</span>
+                        <!-- <span class="name">@{{bodyart.Journalistes.prenom}}</span> -->
+                            
+                    <ul class="media">
+                        <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>  
+
+            <div class="col-md-6 text-right">
+                <a class="btn btn-link" [routerLink]="['/articles']">
+                    <i class="fa fa-arrow-left"></i> Back to HomePage
+                </a>
+            </div>
+            
+        </div>
+
+    <hr>
+
+                <div class="col-md-12" >
+                    <img class="card-img-top" src="{{bodyart.img}}" alt="Card image cap">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="body">{{bodyart.body}}</h5>
+                </div>
+    
+                <a [routerLink]="['/update', Id]" class="btn btn-success btn-lg">
+                    <i  style="color: white;" class="fa fa-pencil" aria-hidden="true"></i> Update
+                </a>
+                
+
+                <a  style="margin-left: 15px;"  (click)="delete()"  class="btn btn-danger btn-lg">
+                    <i  style="color: white" class="fa fa-times" aria-hidden="true"></i> Delete
+                </a>
+                
+  
+    <hr>
+    
+
+
+   

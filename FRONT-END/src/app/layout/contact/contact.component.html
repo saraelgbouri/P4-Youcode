@@ -1,0 +1,96 @@
+<div class="container">
+<h3>CONTACT FORM</h3>
+
+<h5>Have a comment, complaint or compliment about The News Protal network programming? Running into problems with our site or app? Our viewers are our first priority, so we want to hear from you!
+A few things you should know first:</h5>
+<ul>
+  <li>Due to the incredible volume of feedback we receive, we can’t promise individual responses.</li>
+  <li>We’re unable to forward feedback directed to The News Protal talent.</li>
+  <li>The News Protal cannot accept, consider, or pay for any unsolicited creative ideas or materials.</li>
+</ul>
+
+
+<div class="row mt-4">
+  <form #form="ngForm" (ngSubmit)="submit(form)" class="col-md-8 mx-auto forme">
+
+    <div ngModelGroup="fullName">
+
+      <div class="from-group">
+        <label for="fname">FirstName</label>
+        <input required
+              ngModel name="firstName"
+              #firstname="ngModel" 
+              class="form-control"
+              type="text"   
+              id="fname"
+              placeholder="Your name.."
+            >
+
+          <div class="alert alert-danger mt-1" *ngIf="firstname.touched && !firstname.valid">
+            This field is required !
+        </div>
+    </div>
+
+    <div class="from-group">
+        <label for="lname">LastName</label>
+        <input required
+              ngModel name="lastName"
+              #lastname ="ngModel" 
+                class="form-control" 
+                type="text"
+                id="lname"
+                placeholder="Your last name.."
+            >
+            
+        <div class="alert alert-danger mt-1" *ngIf="lastname.touched && !lastname.valid">
+          This field is required !
+        </div>
+  </div>
+    </div>
+
+
+    <div class="from-group">
+          <label for="email">Email</label>
+          <input required
+                ngModel name="Email"
+                #email ="ngModel" 
+                class="form-control" 
+                type="email" 
+                id="email"
+                  placeholder="Your email..."
+              >
+
+          <div class="alert alert-danger mt-1" *ngIf="email.touched && !email.valid">
+            This field is required !
+          </div>
+      </div> 
+
+      <div class="from-group">
+          <label for="subject">Msg</label>
+          <textarea required
+                    ngModel name="Msg" 
+                    #msg ="ngModel" 
+                    class="form-control"
+                      id="subject" 
+                      name="subject" 
+                      placeholder="Write something.." 
+                      style="height:200px">
+          </textarea>
+
+          <div class="alert alert-danger mt-1" *ngIf="msg.touched && !msg.valid">
+            This field is required !
+          </div>
+    </div>
+
+    <div class="from-group">
+      <input type="submit" value="Submit" [disabled]="!form.valid">
+<!-- 
+      <div class="alert alert-danger mt-1">
+        Please Fill out the  above form!
+      </div> -->
+    </div>
+
+  </form>
+</div>
+
+</div>

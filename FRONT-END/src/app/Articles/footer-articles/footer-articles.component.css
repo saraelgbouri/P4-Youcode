@@ -1,0 +1,51 @@
+*{
+    font-family: 'Poppins', sans-serif;
+
+}
+.card{
+    width: 100%;
+    /* border: none; */
+}
+
+.card img{ 
+  height: 10rem;
+}
+
+.card-text a{
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 30%;
+    color: black;
+}
+
+.card a:hover{
+    color: #0086D3;
+}
+
+
+/* button */
+.bg-text {
+    color:#fff;
+    font-size: 1rem;
+    position: absolute;
+    top:40%;
+    left:20%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100px;
+    font-weight: 600;
+    padding-left: 5px;
+    
+  }
+
+  .one{
+   background-color: red;
+
+  }
+  .two{
+      background-color:rgb(139, 73, 206);
+  }
+  .tree{
+      background-color: royalblue;
+      
+  }

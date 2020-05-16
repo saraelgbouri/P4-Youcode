@@ -1,0 +1,73 @@
+<div class="containerr">
+
+    <div class="logo" routerLink="/"></div>
+    <div class="categories">
+
+        <div class="categories_1">  
+            <ul class="social-media">
+                <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul>
+                <li><i class="fa fa-phone" aria-hidden="true"><span>  +212 637-256 (365)</span></i></li>
+            </ul>
+        </div>
+
+
+
+    <div class="categories_2">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li routerLinkActive="active" class="nav-item " [routerLinkActiveOptions]="{exact:true}">
+                            <a class="nav-link" routerLink="/articles">
+                                News
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                            
+                        <li routerLinkActive="active" class=" dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <div class="row" id="row1">
+                                        <div class="col-6" id="grid1">
+                                            <a *ngFor="let cat of cats" class="dropdown-item"  [routerLink]="['/articles/categories', cat.ID]" >{{cat.Titre}}</a>
+                                        </div>
+                                        
+                                   </div>
+                               </div>
+                        </li>                        
+                        <li routerLinkActive="active" class="nav-item">
+                            <a class="nav-link" routerLink="/about">Advertising</a>
+                        </li>
+                    
+                        <li routerLinkActive="active" class=" nav-item">
+                            <a class="nav-link" routerLink="/contact" tabindex="-1" aria-disabled="true">Contact</a>
+                        </li>
+
+                        <li routerLinkActive="active" class=" nav-item">
+                            <a class="nav-link" routerLink="/create-article" tabindex="-1" aria-disabled="true">New-Article</a>
+                        </li>
+                      
+                    </ul>
+                
+                </div>
+            </nav>
+    
+
+            <div class="search">
+                <form class="example d-flex">
+                    <input type="text" placeholder="Search.." >
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+

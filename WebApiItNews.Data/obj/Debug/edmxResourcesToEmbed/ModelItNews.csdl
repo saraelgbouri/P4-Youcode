@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ItNewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NewsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="ItNewsModel.C__MigrationHistory" />
+    <EntitySet Name="Api" EntityType="ItNewsModel.Api" />
+    <EntitySet Name="Article" EntityType="ItNewsModel.Article" />
+    <EntitySet Name="AspNetRoles" EntityType="ItNewsModel.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="ItNewsModel.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="ItNewsModel.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="ItNewsModel.AspNetUsers" />
+    <EntitySet Name="Categorie" EntityType="ItNewsModel.Categorie" />
+    <EntitySet Name="Commentaire" EntityType="ItNewsModel.Commentaire" />
+    <EntitySet Name="Contact" EntityType="ItNewsModel.Contact" />
+    <EntitySet Name="Gestionner" EntityType="ItNewsModel.Gestionner" />
+    <EntitySet Name="Journalistes" EntityType="ItNewsModel.Journalistes" />
+    <EntitySet Name="Pub" EntityType="ItNewsModel.Pub" />
+    <EntitySet Name="RedacteurEnChef" EntityType="ItNewsModel.RedacteurEnChef" />
+    <AssociationSet Name="FKArticle595439" Association="ItNewsModel.FKArticle595439">
+      <End Role="Journalistes" EntitySet="Journalistes" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FKArticle668536" Association="ItNewsModel.FKArticle668536">
+      <End Role="Categorie" EntitySet="Categorie" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FKCommentair387374" Association="ItNewsModel.FKCommentair387374">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="Commentaire" EntitySet="Commentaire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="ItNewsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="ItNewsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FKGestionner622322" Association="ItNewsModel.FKGestionner622322">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Gestionner" EntitySet="Gestionner" />
+    </AssociationSet>
+    <AssociationSet Name="FKJournaliste622032" Association="ItNewsModel.FKJournaliste622032">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Journalistes" EntitySet="Journalistes" />
+    </AssociationSet>
+    <AssociationSet Name="FKRedactionChef622022" Association="ItNewsModel.FKRedactionChef622022">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="RedacteurEnChef" EntitySet="RedacteurEnChef" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="ItNewsModel.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Api">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Lien" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategorieID" Type="Int32" />
+    <Property Name="JournalistesID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Titre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="video" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Journalistes" Relationship="ItNewsModel.FKArticle595439" FromRole="Article" ToRole="Journalistes" />
+    <NavigationProperty Name="Categorie" Relationship="ItNewsModel.FKArticle668536" FromRole="Article" ToRole="Categorie" />
+    <NavigationProperty Name="Commentaire" Relationship="ItNewsModel.FKCommentair387374" FromRole="Article" ToRole="Commentaire" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="ItNewsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="ItNewsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="Gestionner" Relationship="ItNewsModel.FKGestionner622322" FromRole="AspNetUsers" ToRole="Gestionner" />
+    <NavigationProperty Name="Journalistes" Relationship="ItNewsModel.FKJournaliste622032" FromRole="AspNetUsers" ToRole="Journalistes" />
+    <NavigationProperty Name="RedacteurEnChef" Relationship="ItNewsModel.FKRedactionChef622022" FromRole="AspNetUsers" ToRole="RedacteurEnChef" />
+    <NavigationProperty Name="AspNetRoles" Relationship="ItNewsModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Article" Relationship="ItNewsModel.FKArticle668536" FromRole="Categorie" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="Commentaire">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleID" Type="Int32" />
+    <Property Name="Contenu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Article" Relationship="ItNewsModel.FKCommentair387374" FromRole="Commentaire" ToRole="Article" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Gestionner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tele" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.FKGestionner622322" FromRole="Gestionner" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="Journalistes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Statu" Type="Boolean" />
+    <Property Name="Tele" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Article" Relationship="ItNewsModel.FKArticle595439" FromRole="Journalistes" ToRole="Article" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.FKJournaliste622032" FromRole="Journalistes" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="Pub">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Titre" Type="Int32" />
+    <Property Name="Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RedacteurEnChef">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Statu" Type="Boolean" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tele" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="User_id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="ItNewsModel.FKRedactionChef622022" FromRole="RedacteurEnChef" ToRole="AspNetUsers" />
+  </EntityType>
+  <Association Name="FKArticle595439">
+    <End Type="ItNewsModel.Journalistes" Role="Journalistes" Multiplicity="1" />
+    <End Type="ItNewsModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Journalistes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="JournalistesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKArticle668536">
+    <End Type="ItNewsModel.Categorie" Role="Categorie" Multiplicity="0..1" />
+    <End Type="ItNewsModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCommentair387374">
+    <End Type="ItNewsModel.Article" Role="Article" Multiplicity="0..1" />
+    <End Type="ItNewsModel.Commentaire" Role="Commentaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Commentaire">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="ItNewsModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="ItNewsModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKGestionner622322">
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+    <End Type="ItNewsModel.Gestionner" Role="Gestionner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gestionner">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKJournaliste622032">
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+    <End Type="ItNewsModel.Journalistes" Role="Journalistes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Journalistes">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRedactionChef622022">
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+    <End Type="ItNewsModel.RedacteurEnChef" Role="RedacteurEnChef" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RedacteurEnChef">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="ItNewsModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+    <End Type="ItNewsModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+  </Association>
+</Schema>

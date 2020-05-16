@@ -1,0 +1,93 @@
+    *{
+      /* font-family: 'Poppins', sans-serif; */
+      color: black;
+    
+    }
+    .big-data h1{
+    
+      font-size: 2.2rem;
+    
+    }
+    
+    .article{
+      height: 10.5rem;
+    
+    }
+    
+    .card-img-top{
+      height: 24vh
+    }
+    .card-body a{
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 3rem;
+    }
+  
+    
+    .icon-logo{
+      height: 5.5vh;
+      width: 4rem;
+    
+    }
+    
+    .name a{
+      font-size: 0.8rem;
+      color:#F22929;
+    
+    }
+    .date-logo{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      left: 3.4rem;
+      bottom: 2.6rem;
+    }
+    .liens{
+      font-family: 'Poppins', sans-serif;
+      color: black;
+      /* bottom: 1rem; */
+    
+    }
+    
+    /* social media */
+    
+    
+    .social-media {
+      display: flex;
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+    
+    
+    }
+    
+    ul {
+    
+      list-style: none;
+    
+    }
+    ul>li {
+    
+      padding-right: 8px;
+    
+    }
+    
+    .fa-facebook-official {
+      color: #3B5998;
+    
+    }
+    
+    .fa-twitter{
+      color: #55ACEE;
+    
+    }
+    
+    .fa-instagram{
+      color: #f40083;
+    
+    }
+    .fa-linkedin-square{
+      color: #1c7fcf;
+    
+    }
+    

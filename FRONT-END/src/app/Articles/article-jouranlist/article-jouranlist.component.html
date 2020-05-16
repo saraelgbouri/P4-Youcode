@@ -1,0 +1,54 @@
+<div class="row my-3">
+    <div class="col-md-3">
+          <img class="card-img" src="{{Picture}}" alt="Card image cap">    
+    </div>
+
+    <div class="col-md-5 name">
+
+      <h2><span>{{Author["Nom"]}} {{Author["Prenom"]}} </span></h2> 
+      <button type="button" class="btn btn-primary botona">Subscribe</button>
+      <ul class="social-media">
+        <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+
+      <hr>
+    </div>
+
+    
+    <div class="col-md-6 text-right">
+      <a class="btn btn-link" [routerLink]="['/articles']">
+          <i class="fa fa-arrow-left"></i> Back to HomePage
+      </a>
+  </div>
+    <p><i>I have written professionally about technology for my entire adult professional
+       life - over 20 years. I like to figure out how complicated technology works
+        and explain it in a way anyone can understand.</i></p>
+</div>
+
+  <h3>The latest from {{Author["Nom"]}}  </h3>
+
+  <hr class="line">
+    <div class="row article" *ngFor="let bodyart of Articles">
+        <div class="col-md-4" >
+          <img [routerLink]="['/articles', bodyart.ID]"  class="card-img-top" src="{{bodyart.Img}}" alt="Card image cap">
+        </div>
+      <div class=" liens col-md-8">
+              <div class="date-logo">
+                <span class="bg-text">{{bodyart.Date}}</span>
+              </div>
+
+              <div class="card-body">
+                <h3><a [routerLink]="['/articles', bodyart.ID]">{{bodyart.Titre}}</a></h3>
+              </div>
+      </div>
+      <h5>{{bodyart.Body|slice:0:250}}...</h5>
+
+      <br>
+  </div>
+
+  <hr class="line">
+
+
